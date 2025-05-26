@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Animal Kingdom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/animal-info.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="#">ANIMAL PARK</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Base/animal-info.html">Animals</a></li>
+            <li><a href="../Base/pop.html">Endangered</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background" style="background-image: url('/images/mammals/Arctic_Fox.jpg');"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <div class="hero-text">
+                <h1>Explore the Animal Kingdom</h1>
+                <p>Discover the diverse and fascinating world of animals.</p>
+                <a href="#categories" class="cta-button">Start Exploring</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Section -->
+    <section id="categories" class="category-section">
+        <div class="category-container" id="categoryContainer">
+            <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon"><i class="fas fa-paw"></i></div>
+                <h3>Mammals</h3>
+                <p>Warm-blooded vertebrates with hair or fur.</p>
+                <a href="mammals.html" class="explore-button">Explore</a>
+            </div>
+            <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-icon"><i class="fas fa-dove"></i></div>
+                <h3>Birds</h3>
+                <p>Feathered creatures capable of flight (mostly).</p>
+                <a href="birds.html" class="explore-button">Explore</a>
+            </div>
+            <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-icon"><i class="fas fa-bug"></i></div>
+                <h3>Insects</h3>
+                <p>Small arthropods with six legs and an exoskeleton.</p>
+                <a href="insects.html" class="explore-button">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Footer Start -->
+    <footer class="site-footer">
+        <div class="footer-top-divider"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Mission -->
+                <div class="footer-column footer-brand">
+                    <div class="brand-info-wrapper">
+                        <div class="footer-address-container">
+                            <h5 class="address-title">ADDRESS</h5>
+                            <p class="footer-mission">123, Ocean View Road<br>Bandra West, Mumbai<br>Maharashtra 400050</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="animal-info.html#categories">Categories</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources / Get Involved -->
+                <div class="footer-column footer-resources">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Contact -->
+                <div class="footer-column footer-social-contact">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-feather="youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <address class="footer-contact-info">
+                        Email: <a href="mailto:support@wildlife.org">support@wildlife.org</a><br>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WildLife. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Site Footer End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script> 
+    <script src="../script.js"></script> 
+    <script src="../js/animal-info.js"></script>
+
+    <script>
+        AOS.init({
+            once: false, 
+            duration: 800 
+        });
+        feather.replace(); 
+    </script>
+
+    
+</body>
+</html>

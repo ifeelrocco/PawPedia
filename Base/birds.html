@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Birds - Animal Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Base styles first -->
+    <link rel="stylesheet" href="../style.css"> 
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../styles/birds.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="#">ANIMAL PARK</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Base/animal-info.html">Animals</a></li>
+            <li><a href="../Base/pop.html">Endangered</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Birds Hero Section -->
+    <header class="birds-hero">
+        <div class="birds-hero-content" data-aos="fade-up">
+            <h1>Discover the World of Birds</h1>
+            <p>Explore the diverse and fascinating lives of birds across the globe.</p>
+            <a href="#bird-grid" class="cta-button">Start Exploring</a>
+        </div>
+    </header>
+
+    <!-- Search and Filter Section -->
+    <section class="filter-search-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="birdSearch" placeholder="Search for birds...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="mountain">Mountain</button>
+                <button class="filter-btn" data-filter="tropical">Tropical</button>
+                <button class="filter-btn" data-filter="arctic">Arctic</button>
+                <button class="filter-btn" data-filter="forest">Forest</button>
+                <button class="filter-btn" data-filter="urban">Urban</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bird Grid Section -->
+    <section id="bird-grid" class="bird-grid-section">
+        <div class="container grid-container">
+            <!-- Bird Cards will be added here -->
+            <div class="bird-card" data-aos="fade-up" data-category="mountain" data-name="Eagle">
+                <img src="../images/birds/eagle.jpg" alt="Eagle">
+                <div class="card-content">
+                    <h3>Eagle</h3>
+                    <p>Habitat: Mountains & Forests</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="tropical" data-name="Parrot">
+                <img src="../images/birds/parrot.jpg" alt="Parrot">
+                 <div class="card-content">
+                    <h3>Parrot</h3>
+                    <p>Habitat: Tropical Forests</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="arctic" data-name="Penguin">
+                <img src="../images/birds/penguin.jpg" alt="Penguin">
+                 <div class="card-content">
+                    <h3>Penguin</h3>
+                    <p>Habitat: Antarctic Coasts</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="bird-card" data-aos="fade-up" data-category="forest" data-name="Owl">
+                <img src="../images/birds/owl.jpg" alt="Owl">
+                 <div class="card-content">
+                    <h3>Owl</h3>
+                    <p>Habitat: Forests Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="forest" data-name="Hummingbird">
+                <img src="../images/birds/hummingbird.jpg" alt="Hummingbird">
+                 <div class="card-content">
+                    <h3>Hummingbird</h3>
+                    <p>Habitat: Americas (Forests, Gardens)</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="bird-card" data-aos="fade-up" data-category="urban" data-name="Sparrow">
+                <img src="../images/birds/sparrow.jpg" alt="Sparrow">
+                 <div class="card-content">
+                    <h3>Sparrow</h3>
+                    <p>Habitat: Urban & Rural Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="urban" data-name="Pigeon">
+                <img src="../images/birds/pigeon.jpg" alt="Pigeon">
+                 <div class="card-content">
+                    <h3>Pigeon</h3>
+                    <p>Habitat: Urban Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="forest" data-name="Crow">
+                <img src="../images/birds/crow.jpg" alt="Crow">
+                 <div class="card-content">
+                    <h3>Crow</h3>
+                    <p>Habitat: Forests & Urban Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="bird-card" data-aos="fade-up" data-category="aquatic" data-name="Swan">
+                <img src="../images/birds/swan.jpg" alt="Swan">
+                 <div class="card-content">
+                    <h3>Swan</h3>
+                    <p>Habitat: Wetlands & Lakes</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+     <!-- Site Footer Start -->
+     <footer class="site-footer">
+        <div class="footer-top-divider"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Mission -->
+                <div class="footer-column footer-brand">
+                    <div class="brand-info-wrapper">
+                        <div class="footer-address-container">
+                            <h5 class="address-title">ADDRESS</h5>
+                            <p class="footer-mission">123, Ocean View Road<br>Bandra West, Mumbai<br>Maharashtra 400050</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="animal-info.html">Animals</a></li>
+                        <li><a href="#">Habitats</a></li>
+                        <li><a href="#threats-to-wildlife-section">Threats</a></li>
+                        <li><a href="#">Discover More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources / Get Involved -->
+                <div class="footer-column footer-resources">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <!-- Optional: Add more links like "Volunteer", "Donate" -->
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Contact -->
+                <div class="footer-column footer-social-contact">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-feather="youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <address class="footer-contact-info">
+                        Email: <a href="mailto:support@wildlife.org">support@wildlife.org</a><br>
+                        <!-- Phone: (123) 456-7890 -->
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Animal Park. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Site Footer End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="https://unpkg.com/feather-icons"></script> <!-- Add Feather Icons -->
+    <script src="../script.js"></script> <!-- General script -->
+    <script src="../js/birds.js"></script> <!-- Page-specific script -->
+    <script>
+        feather.replace(); // Initialize Feather Icons
+    </script>
+
+</body>
+</html>

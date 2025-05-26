@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Mammals - Animal Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Base styles first -->
+    <link rel="stylesheet" href="../style.css"> 
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../styles/mammals.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="#">ANIMAL PARK</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Base/animal-info.html">Animals</a></li>
+            <li><a href="../Base/pop.html">Endangered</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+
+
+    <!-- Mammals Hero Section -->
+    <header class="mammals-hero">
+        <div class="mammals-hero-content" data-aos="fade-up">
+            <h1>Discover the World of Mammals</h1>
+            <p>Explore the diverse and captivating lives of mammals across the globe.</p>
+            <a href="#mammal-grid" class="cta-button">Start Exploring</a>
+        </div>
+    </header>
+
+    <!-- Search and Filter Section -->
+    <section class="filter-search-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="mammalSearch" placeholder="Search for mammals...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="savannah">Savannah</button>
+                <button class="filter-btn" data-filter="forest">Forest</button>
+                <button class="filter-btn" data-filter="arctic">Arctic</button>
+                <button class="filter-btn" data-filter="aquatic">Aquatic</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mammal Grid Section -->
+    <section id="mammal-grid" class="mammal-grid-section">
+        <div class="container grid-container">
+            <!-- Mammal Cards will be added here -->
+            <div class="mammal-card" data-aos="fade-up" data-category="savannah" data-name="Lion">
+                <img src="../images/mammals/lion.jpg" alt="Lion">
+                <div class="card-content">
+                    <h3>Lion</h3>
+                    <p>Habitat: African Savannah</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="savannah" data-name="Elephant">
+                <img src="../images/mammals/elephant.jpg" alt="Elephant">
+                 <div class="card-content">
+                    <h3>Elephant</h3>
+                    <p>Habitat: Africa & Asia</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="forest" data-name="Tiger">
+                <img src="../images/mammals/tiger.jpg" alt="Tiger">
+                 <div class="card-content">
+                    <h3>Tiger</h3>
+                    <p>Habitat: Asian Forests</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="mammal-card" data-aos="fade-up" data-category="savannah" data-name="Giraffe">
+                <img src="../images/mammals/giraffe.jpg" alt="Giraffe">
+                 <div class="card-content">
+                    <h3>Giraffe</h3>
+                    <p>Habitat: African Savannah</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="forest" data-name="Panda">
+                <img src="../images/mammals/panda.jpg" alt="Panda">
+                 <div class="card-content">
+                    <h3>Panda</h3>
+                    <p>Habitat: Bamboo Forests (China)</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="mammal-card" data-aos="fade-up" data-category="forest" data-name="Deer">
+                <img src="../images/mammals/deer.jpg" alt="Deer">
+                 <div class="card-content">
+                    <h3>Deer</h3>
+                    <p>Habitat: Forests Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="mammal-card" data-aos="fade-up" data-category="forest" data-name="Fox">
+                <img src="../images/mammals/fox.jpg" alt="Fox">
+                 <div class="card-content">
+                    <h3>Fox</h3>
+                    <p>Habitat: Varied (Forests, Grasslands)</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="aquatic" data-name="Dolphin">
+                <img src="../images/mammals/dolphin.jpg" alt="Dolphin">
+                 <div class="card-content">
+                    <h3>Dolphin</h3>
+                    <p>Habitat: Oceans Worldwide</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="mammal-card" data-aos="fade-up" data-category="arctic" data-name="Arctic Fox">
+                <img src="../images/mammals/arctic_fox.jpg" alt="Arctic Fox">
+                 <div class="card-content">
+                    <h3>Arctic Fox</h3>
+                    <p>Habitat: Arctic Tundra</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="mammal-card" data-aos="fade-up" data-category="aquatic" data-name="Polar Bear">
+                 <img src="../images/mammals/polar_bear.jpg" alt="Polar Bear">
+                 <div class="card-content">
+                    <h3>Polar Bear</h3>
+                    <p>Habitat: Arctic Ice</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="arctic" data-name="Walrus">
+                 <img src="../images/mammals/walrus.jpg" alt="Walrus">
+                 <div class="card-content">
+                    <h3>Walrus</h3>
+                    <p>Habitat: Arctic Seas</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="mammal-card" data-aos="fade-up" data-category="arctic" data-name="Reindeer">
+                 <img src="../images/mammals/reindeer.jpg" alt="Reindeer">
+                 <div class="card-content">
+                    <h3>Reindeer</h3>
+                    <p>Habitat: Arctic Tundra & Forests</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <!-- Add more cards as needed -->
+        </div>
+    </section>
+     <!-- Site Footer Start -->
+     <footer class="site-footer">
+        <div class="footer-top-divider"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Mission -->
+                <div class="footer-column footer-brand">
+                    <div class="brand-info-wrapper">
+                        <div class="footer-address-container">
+                            <h5 class="address-title">ADDRESS</h5>
+                            <p class="footer-mission">123, Ocean View Road<br>Bandra West, Mumbai<br>Maharashtra 400050</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="animal-info.html">Animals</a></li>
+                        <li><a href="#">Habitats</a></li>
+                        <li><a href="#threats-to-wildlife-section">Threats</a></li>
+                        <li><a href="#">Discover More</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources / Get Involved -->
+                <div class="footer-column footer-resources">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <!-- Optional: Add more links like "Volunteer", "Donate" -->
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Contact -->
+                <div class="footer-column footer-social-contact">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-feather="youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <address class="footer-contact-info">
+                        Email: <a href="mailto:support@wildlife.org">support@wildlife.org</a><br>
+                        <!-- Phone: (123) 456-7890 -->
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DevTech Studios. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Site Footer End -->
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- <script src="include.js"></script> Script to include navbar/footer -->
+    <script src="../script.js"></script> <!-- Main site script for navbar interactivity, etc. -->
+    <script src="../js/mammals.js"></script> <!-- Page-specific script -->
+    <script>
+      AOS.init({
+        once: true, // Animate elements only once
+        duration: 800 
+      });
+      feather.replace(); 
+    </script>
+</body>
+</html>

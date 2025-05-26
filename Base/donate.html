@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Animal Park</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d9488;
+            --background-color: #f8fafc;
+            --text-color: #1f2937;
+            --success-color: #22c55e;
+        }
+
+        /* Copy Popup Styles */
+        .copy-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .copy-popup-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .copy-checkmark {
+            font-size: 1.25rem;
+            color: var(--success-color);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, var(--background-color), #e5f5f4);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: #4b5563;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .qr-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .qr-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            border: 2px solid var(--primary-color);
+            animation: pulse 2s infinite;
+        }
+
+        .payment-apps-small {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .payment-icon {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .upi-info {
+            margin-top: 2rem;
+            color: #4b5563;
+        }
+
+        .upi-id {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .manual-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .manual-copy input {
+            width: 200px;
+            padding: 0.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            text-align: center;
+            font-family: inherit;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .manual-copy input:hover {
+            border-color: var(--primary-color);
+        }
+
+        .manual-copy input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+        }
+
+
+
+        .copy-btn:hover {
+            background: #0f766e;
+            transform: translateY(-1px);
+        }
+
+        .copy-btn.copied {
+            background: var(--success-color);
+        }
+
+        .payment-apps {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-app {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+        }
+
+        .payment-app:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Success Popup */
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .success-popup.active {
+            display: block;
+        }
+
+        .success-checkmark {
+            }
+
+            body {
+                font-family: 'Manrope', sans-serif;
+                background: linear-gradient(135deg, var(--background-color), #e5f5f4);
+                color: var(--text-color);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .container {
+                text-align: center;
+                padding: 2rem;
+                max-width: 600px;
+                width: 90%;
+            }
+
+            .header {
+                margin-bottom: 3rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .tagline {
+                color: #4b5563;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .qr-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 16px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                margin: 2rem 0;
+                position: relative;
+            }
+
+            .qr-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 16px;
+                border: 2px solid var(--primary-color);
+                animation: pulse 2s infinite;
+            }
+
+            .payment-apps-small {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 1rem;
+                padding: 0.5rem;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+            }
+
+            .payment-icon {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            }
+
+            .qr-code {
+                width: 200px;
+                height: 200px;
+                margin: 2rem auto;
+                animation: float 3s ease-in-out infinite;
+            }
+
+            .upi-info {
+                margin-top: 2rem;
+                color: #4b5563;
+            }
+
+            .upi-id {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .manual-copy {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .manual-copy input {
+                width: 200px;
+                padding: 0.5rem;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                text-align: center;
+                font-family: inherit;
+                font-size: 0.875rem;
+                cursor: pointer;
+            }
+
+            .manual-copy input:hover {
+                border-color: var(--primary-color);
+            }
+
+            .manual-copy input:focus {
+                outline: none;
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+            }
+
+            .copy-btn:hover {
+                background: #0f766e;
+                transform: translateY(-1px);
+            }
+
+            .copy-btn.copied {
+                background: var(--success-color);
+            }
+
+            .payment-apps {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .payment-app {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                background: #f3f4f6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.2s ease;
+            }
+
+            .payment-app:hover {
+                background: var(--primary-color);
+                transform: translateY(-2px);
+            }
+
+            /* Success Popup */
+            .success-popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                text-align: center;
+                animation: fadeIn 0.3s ease-out;
+            }
+
+            .success-popup.active {
+                display: block;
+            }
+
+            .success-checkmark {
+                font-size: 3rem;
+                color: var(--success-color);
+                margin-bottom: 1rem;
+            }
+
+            /* Toast Popup Styles */
+            .toast-popup {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: white;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                display: none;
+                animation: slideIn 0.3s ease-out;
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Animal Park</div>
+            <div class="tagline">Support wildlife conservation with a quick scan</div>
+        </div>
+
+        <div class="qr-card">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=8dundergound01@oksbi&pn=Animal%20Park%20Conservation&am=1000&cu=INR" alt="UPI QR Code" class="qr-code">
+            <p class="upi-info">Scan with any UPI app (PhonePe/GPay/PayTM)</p>
+            <div class="upi-id">
+                <span>8dundergound01@oksbi</span>
+            </div>
+
+            <div class="payment-apps-small">
+                <img src="../images/payment/phonepe.png" alt="PhonePe" class="payment-icon">
+                <img src="../images/payment/gpay.png" alt="GPay" class="payment-icon">
+                <img src="../images/payment/paytm.png" alt="PayTM" class="payment-icon">
+            </div>
+
+            </div>
+        </div>
+
+        <script>
+            // Copy UPI ID
+            function copyUPI() {
+                const upiId = '8dundergound01@oksbi';
+                
+                // Try clipboard API first
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(upiId)
+                        .then(() => {
+                            showCopySuccess();
+                        })
+                        .catch(() => {
+                            showCopyError();
+                        });
+                } else {
+                    // Fallback for older browsers
+                    try {
+                        const tempInput = document.createElement('input');
+                        tempInput.value = upiId;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        showCopySuccess();
+                    } catch (err) {
+                        showCopyError();
+                    }
+                }
+            }
+
+            // Show copy success
+            function showCopySuccess() {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                showCopyPopup();
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }
+
+            // Show copy error
+            function showCopyError() {
+                alert('Failed to copy UPI ID. Please try copying manually.');
+            }
+
+            // Show copy success popup
+            function showCopyPopup() {
+                const popup = document.createElement('div');
+                popup.className = 'success-popup';
+                popup.innerHTML = `
+                    <div class="success-checkmark">✓</div>
+                    <p>UPI ID copied to clipboard!</p>
+                `;
+                document.body.appendChild(popup);
+                
+                // Remove popup after 2 seconds
+                setTimeout(() => {
+                    popup.remove();
+                }, 2000);
+            }
+        </script>
+    </body>
+</html>

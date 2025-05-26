@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect Endangered Species - Pawpedia</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2b2d42;
+            line-height: 1.6;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 769px) {
+            .container {
+                padding-top: 6rem;
+            }
+        }
+
+        .help-section {
+            padding: 1rem 0;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+            width: 80%;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .help-grid {
+                grid-template-columns: 1fr;
+                width: 100%;
+                padding: 0 1rem;
+            }
+
+            .help-card {
+                width: 100%;
+                padding: 1.5rem;
+            }
+        }
+
+        .help-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1),
+                        0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15),
+                        0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .help-card-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .help-card-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .help-card-text {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .help-card-button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .help-card-button:hover {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">Pawpedia</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Base/animal-info.html">Animals</a></li>
+            <li><a href="../Base/pop.html">Endangered</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="help-section">
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-card-icon">🌱</div>
+                    <h3 class="help-card-title">Reduce Your Footprint</h3>
+                    <p class="help-card-text">Choose sustainable products to protect habitats</p>
+                    <a href="#" class="help-card-button">Eco-Friendly Alternatives →</a>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-card-icon">💧</div>
+                    <h3 class="help-card-title">Support Conservation</h3>
+                    <p class="help-card-text">Donate to vetted wildlife organizations</p>
+                    <a href="#" class="help-card-button">Trusted NGOs →</a>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-card-icon">📢</div>
+                    <h3 class="help-card-title">Spread Awareness</h3>
+                    <p class="help-card-text">Share facts and advocate for policy changes</p>
+                    <a href="#" class="help-card-button">Shareable Resources →</a>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-card-icon">✋</div>
+                    <h3 class="help-card-title">Volunteer</h3>
+                    <p class="help-card-text">Join local cleanups or citizen science projects</p>
+                    <a href="#" class="help-card-button">Find Opportunities →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top-divider"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <div class="brand-info-wrapper">
+                        <div class="footer-address-container">
+                            <h5 class="address-title">ADDRESS</h5>
+                            <p class="footer-mission">123, Ocean View Road<br>Bandra West, Mumbai<br>Maharashtra 400050</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../Base/animal-info.html">Animals</a></li>
+                        <li><a href="../Base/pop.html">Endangered</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-resources">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../Base/donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-social-contact">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-feather="youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <address class="footer-contact-info">
+                        Email: <a href="mailto:support@wildlife.org">support@wildlife.org</a><br>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DevTech Studios. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script src="script.js"></script>
+
+    <script>
+        feather.replace();
+
+        // Navbar Toggle
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

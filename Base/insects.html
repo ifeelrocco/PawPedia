@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Insects - Animal Park</title> <!-- Updated Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Base styles first -->
+    <link rel="stylesheet" href="../style.css"> 
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../styles/insects.css"> <!-- Updated CSS Link -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="#">ANIMAL PARK</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Base/animal-info.html">Animals</a></li>
+            <li><a href="../Base/pop.html">Endangered</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+
+
+    <!-- Insects Hero Section --> <!-- Updated Section Name -->
+    <header class="insects-hero"> <!-- Updated Class -->
+        <div class="insects-hero-content" data-aos="fade-up"> <!-- Updated Class -->
+            <h1>Discover the World of Insects</h1> <!-- Updated Heading -->
+            <p>Explore the diverse and captivating lives of insects across the globe.</p> <!-- Updated Text -->
+            <a href="#insect-grid" class="cta-button">Start Exploring</a> <!-- Updated Href -->
+        </div>
+    </header>
+
+    <!-- Search and Filter Section -->
+    <section class="filter-search-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="insectSearch" placeholder="Search for insects..."> <!-- Updated ID and Placeholder -->
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-buttons">
+                <!-- Updated Filter Categories for Insects -->
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="garden">Garden</button>
+                <button class="filter-btn" data-filter="forest">Forest</button>
+                <button class="filter-btn" data-filter="field">Field</button>
+                <button class="filter-btn" data-filter="aquatic">Aquatic</button> 
+                <button class="filter-btn" data-filter="pollinator">Pollinator</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insect Grid Section --> <!-- Updated Section Name -->
+    <section id="insect-grid" class="insect-grid-section"> <!-- Updated ID and Class -->
+        <div class="container grid-container">
+            <!-- Insect Cards will be added here -->
+            <!-- Example Cards - Replace with actual insect data -->
+            <div class="insect-card" data-aos="fade-up" data-category="garden" data-name="Butterfly"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/butterfly.jpg" alt="Butterfly"> <!-- Placeholder Image -->
+                <div class="card-content">
+                    <h3>Butterfly</h3>
+                    <p>Habitat: Gardens & Meadows</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="insect-card" data-aos="fade-up" data-category="garden" data-name="Bee"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/bee.jpg" alt="Bee"> <!-- Placeholder Image -->
+                 <div class="card-content">
+                    <h3>Bee</h3>
+                    <p>Habitat: Gardens & Fields (Pollinator)</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="insect-card" data-aos="fade-up" data-category="forest" data-name="Ant"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/ant.jpg" alt="Ant"> <!-- Placeholder Image -->
+                 <div class="card-content">
+                    <h3>Ant</h3>
+                    <p>Habitat: Forests & Soil</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <div class="insect-card" data-aos="fade-up" data-category="field" data-name="Grasshopper"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/grasshopper.jpg" alt="Grasshopper"> <!-- Placeholder Image -->
+                 <div class="card-content">
+                    <h3>Grasshopper</h3>
+                    <p>Habitat: Fields & Grasslands</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="insect-card" data-aos="fade-up" data-category="forest" data-name="Ladybug"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/ladybug.jpg" alt="Ladybug"> <!-- Placeholder Image -->
+                 <div class="card-content">
+                    <h3>Ladybug</h3>
+                    <p>Habitat: Gardens & Forests</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="insect-card" data-aos="fade-up" data-category="aquatic" data-name="Dragonfly"> <!-- Updated Class, Category, Name -->
+                <img src="../images/insects/dragonfly.jpg" alt="Dragonfly"> <!-- Placeholder Image -->
+                 <div class="card-content">
+                    <h3>Dragonfly</h3>
+                    <p>Habitat: Near Water (Ponds, Lakes)</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+             <!-- Add more cards as needed -->
+        </div>
+    </section>
+     <!-- Site Footer Start -->
+     <footer class="site-footer">
+        <div class="footer-top-divider"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Mission -->
+                <div class="footer-column footer-brand">
+                    <div class="brand-info-wrapper">
+                        <div class="footer-address-container">
+                            <h5 class="address-title">ADDRESS</h5>
+                            <p class="footer-mission">123, Ocean View Road<br>Bandra West, Mumbai<br>Maharashtra 400050</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="animal-info.html">Animals</a></li>
+                        <li><a href="#">Habitats</a></li>
+                        <li><a href="#">Threats</a></li> <!-- Generic link, update if needed -->
+                        <li><a href="#">Discover More</a></li> <!-- Generic link, update if needed -->
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources / Get Involved -->
+                <div class="footer-column footer-resources">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <!-- Optional: Add more links like "Volunteer", "Donate" -->
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Contact (Using Feather Icons) -->
+                <div class="footer-column footer-social-contact">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-feather="youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <address class="footer-contact-info">
+                        Email: <a href="mailto:support@wildlife.org">support@wildlife.org</a><br>
+                        <!-- Phone: (123) 456-7890 -->
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Animal Park. All Rights Reserved.</p> <!-- Update year if needed -->
+        </div>
+    </footer>
+    <!-- Site Footer End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="https://unpkg.com/feather-icons"></script> <!-- Include Feather Icons -->
+    <script src="../script.js"></script> <!-- General script -->
+    <script src="../js/insects.js"></script> <!-- Updated Page-specific script -->
+    <script>
+        feather.replace(); // Initialize Feather Icons
+    </script>
+
+</body>
+</html>
