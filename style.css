@@ -1,0 +1,1893 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdfaf6;
+    width: 100vw;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Ensure all containers and sections take full width */
+.container, .section, .hero-background, .hero-content {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default margins and padding from all elements */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #f4f7f6;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 2rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #2c3e50; /* Darker text for readability */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #34495e; /* Slightly lighter text for readability */
+    font-weight: 600;
+    padding: 0.5rem 0.25rem;
+    position: relative;
+    transition: color 0.3s ease-in-out; /* Match footer transition */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* Match footer */
+    bottom: -3px; /* Match footer */
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%); /* Ensure it's truly centered */
+    background-color: #2c3e50; /* Darker underline */
+    transition: width 0.3s ease-in-out; /* Match footer transition */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #272b1c; /* Dark text */
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #2c3e50; /* Darker color for visibility */
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Styles for when the menu is open (toggled by JS) */
+.hamburger-menu.active .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-links.active {
+    display: flex; /* This will show the nav-links when hamburger is active */
+}
+
+.professional-hero-section {
+    display: flex;
+    flex-direction: column; /* Stack content vertically for centering */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh;
+    background-image: url('images/blackpanther.jpg'); /* Updated background image */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box;
+    text-align: center; /* Center text for all children */
+}
+
+.professional-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+    z-index: 1; /* Overlay sits above background image */
+}
+
+.hero-left-column, .hero-right-column {
+    /* No longer need flex:1 for two columns, they will be centered */
+    padding: 20px 0; /* Adjust padding, primarily vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items within the column */
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    width: 100%; /* Allow columns to take width, parent handles centering */
+    max-width: 750px; /* Max width for the content block */
+}
+
+
+.hero-right-column {
+    display: none; /* Hide the right column as content is now centered */
+}
+
+/* .hero-left-column alignment is handled by the shared rule and parent text-align */
+
+.hero-main-headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800; /* Extra Bold */
+    font-size: 52px; /* Specified size */
+    color: #F5F5F5; /* Off-white */
+    letter-spacing: 1.5px;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.7); /* Enhanced realistic shadow */
+    text-align: center; /* Center headline */
+}
+
+.hero-mission-subheading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 18px;
+    color: #EAEAEA; /* Slightly dimmer off-white */
+    line-height: 1.7;
+    max-width: 600px; /* Retain max-width for readability */
+    margin-left: auto; /* Center the subheading block if it's narrower */
+    margin-right: auto; /* Center the subheading block */
+    margin-bottom: 35px;
+    text-shadow: 1px 2px 6px rgba(0,0,0,0.6); /* Enhanced realistic shadow */
+    text-align: center; /* Center subheading */
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    align-items: center;
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.hero-button {
+    font-family: 'Poppins', sans-serif;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.hero-button.primary {
+    background-color: #2E8B57; /* Sea Green - original */
+    color: white;
+    border: 2px solid #2E8B57; /* Keep border or make slightly lighter for definition */
+}
+
+/* Refresh Videos Button */
+.refresh-videos-button-container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.premium-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.premium-button:hover,
+.premium-button:focus {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    outline: none;
+}
+
+.premium-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button.primary:hover {
+    background-color: #3CB371; /* Medium Sea Green - slightly lighter for hover */
+    border-color: #3CB371;
+    transform: scale(1.03);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.25); /* Enhance shadow on dark bg */
+}
+
+.hero-button.secondary {
+    background-color: transparent;
+    color: #F5F5DC; /* Beige/Light text for secondary button */
+    border: 2px solid #F5F5DC; /* Matching border */
+}
+
+.hero-button.secondary:hover {
+    background-color: rgba(245, 245, 220, 0.15); /* Subtle Beige translucent fill on hover */
+    color: #FFFFFF; /* White text on hover */
+    border-color: #FFFFFF;
+    transform: scale(1.03);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.2);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center; /* Center stats */
+    gap: 30px; /* Space between stat items */
+    margin-top: 20px; /* Space above stats */
+    flex-wrap: wrap; /* Allow stats to wrap on small screens */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center stat number and label vertically */
+    min-width: 120px; /* Minimum width for each stat item */
+    text-align: center; /* Ensure text within stat-item is centered */
+}
+
+.stat-number-container {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px; /* Match .stat-number */
+    font-weight: 700; /* Match .stat-number */
+    color: #F5F5F5; /* Match .stat-number */
+    line-height: 1.1;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6); /* Match .stat-number */
+    display: inline-block; /* Keep number and + together, allows text-align from parent */
+}
+
+.stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #DDDDDD; /* Subtle off-white/light gray for labels */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Gentle shadow */
+}
+
+@media (max-width: 768px) { /* Adjusted breakpoint for better responsiveness */
+    .navbar {
+        /* flex-direction: column; Remove this to keep logo and hamburger on one line */
+        /* align-items: flex-start; Remove this */
+        padding: 1rem;
+        position: relative; /* For absolute positioning of nav-links if needed, or for stacking context */
+        z-index: 1000; /* Ensure navbar is above other content like hero section */
+    }
+
+    .logo {
+        margin-bottom: 0; /* No margin needed if on same line as hamburger */
+        font-size: 1.2rem; /* Reduced font size for mobile */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        display: flex; /* Changed from none to flex for animation */
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the start on mobile */
+        width: 100%; /* Make links take full width for better tap targets */
+        position: absolute; /* Position below the navbar */
+        top: 100%; /* Start below the navbar */
+        left: 0;
+        background-color: rgba(232, 245, 233, 0.5); /* Further reduced opacity */
+        padding: 1rem 0; /* Add some padding, consistent for both states */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: add shadow to dropdown */
+
+        /* Animation properties for hidden state */
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above and hidden */
+        overflow: hidden;
+        visibility: hidden; /* Ensure it's not accessible when hidden */
+        pointer-events: none; /* Disable interaction when hidden */
+        transition: max-height 0.35s ease-in-out, 
+                    opacity 0.2s ease-in-out, 
+                    transform 0.3s ease-in-out, 
+                    visibility 0s 0.35s; /* Delay hiding visibility until transition ends */
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* Adjust as needed to fit content */
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+        -webkit-backdrop-filter: blur(8px); /* Safari */
+        backdrop-filter: blur(8px);
+        /* padding: 1rem 0; is inherited */
+        transition: max-height 0.35s ease-in-out, 
+                    opacity 0.3s 0.05s ease-in-out, /* Slight delay for opacity/transform on open */
+                    transform 0.3s 0.05s ease-in-out, 
+                    visibility 0s 0s; /* Make visible immediately */
+    }
+
+    .nav-links li {
+        margin: 8px 2rem; /* Add horizontal margin to align with padded navbar */
+        width: calc(100% - 4rem); /* Adjust width considering padding */
+    }
+
+    /* Mobile specific styles for nav links */
+    .nav-links a {
+        color: #000000 !important; /* Black text for mobile menu links */
+        display: block; /* Ensure full width for tap target and consistent padding application */
+        padding: 0.75rem 0; /* Consistent padding for each link item */
+        position: relative; /* Needed for the ::after pseudo-element positioning */
+    }
+
+    .nav-links a::after { /* Green underline, animates from left */
+        content: ''; /* Ensure content is present */
+        position: absolute;
+        width: 0; /* Starts hidden */
+        height: 2px;
+        bottom: 4px; /* Adjust underline position if padding changed */
+        left: 0; /* Start from the left */
+        background-color: #000000 !important; /* Black underline */
+        transition: width 0.4s ease-in-out; /* Inherited, but good to be explicit */
+        transform: none !important; /* Override desktop translateX(-50%) */
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #000000 !important; /* Black text on hover/active as well for mobile */
+        /* background-color: rgba(0,0,0,0.05); Removed highlight */
+    }
+
+    .nav-links a:hover::after, /* Black underline expands on hover/active */
+    .nav-links a.active::after {
+        width: 100%;
+        background-color: #000000 !important; /* Ensure underline remains black on hover */
+    }
+}
+
+/* --- Responsive Styles for Professional Hero Section --- */
+@media (max-width: 1024px) { /* Adjusted breakpoint for tablets */
+    .professional-hero-section {
+        flex-direction: column;
+        min-height: auto; /* Adjust height for stacked content */
+        padding: 80px 5% 60px; /* More top/bottom padding when stacked */
+        text-align: center;
+    }
+
+    .hero-left-column {
+        align-items: center; /* Center text content when stacked */
+        order: 2; /* Text below image */
+        padding: 40px 0 0 0; /* Adjust padding */
+        width: 100%;
+        max-width: 100%; /* Allow full width on mobile */
+        background-color: transparent; /* Remove specific mobile overlay if section handles it */
+        border-radius: 0; /* Remove border radius if any */
+    }
+
+    .hero-right-column {
+        order: 1; /* Image (background) context is part of the section, this column is now effectively empty */
+        padding: 0;
+        min-height: 30vh; /* Give some space for background to be seen on mobile if section stacks */
+        width: 100%;
+        /* No flex needed as it doesn't contain direct visible children that need alignment */
+    }
+
+    /* Adjust left column to take full width as right column is just for bg spacing */
+    .hero-left-column {
+        align-items: center; 
+        order: 2; 
+        padding: 40px 0 0 0; 
+        width: 100%;
+        background-color: rgba(0,0,0,0.1); /* Optional: slightly darker overlay just for text area on mobile for more pop if needed */
+        border-radius: 8px; /* if adding bg color */
+    }
+
+    .hero-main-headline {
+        font-size: 44px;
+    }
+
+    .hero-mission-subheading {
+        font-size: 17px;
+        max-width: 90%; /* Allow more width */
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-button {
+        margin-right: 0; /* Remove right margin when stacked */
+        width: 70%;
+        max-width: 280px;
+        padding: 12px 25px;
+    }
+
+    .hero-stats {
+        flex-direction: row; /* Keep stats in a row if space allows */
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap; /* Allow wrapping if too many stats */
+        margin-top: 30px;
+    }
+    .stat-item {
+        text-align: center; /* Center stat items when stacked */
+    }
+    /* .hero-main-image is now a background, so no specific mobile styles for it as an element */
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .professional-hero-section {
+        padding: 60px 5% 40px;
+    }
+    .hero-main-headline {
+        font-size: 34px;
+    }
+    .hero-mission-subheading {
+        font-size: 15px;
+    }
+    .hero-button {
+        width: 85%;
+        font-size: 15px;
+    }
+    .stat-number {
+        font-size: 26px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+    .hero-stats {
+        flex-direction: column; /* Stack stats on very small screens */
+        gap: 20px;
+    }
+    .hero-main-image {
+        max-width: 100%;
+    }
+}
+
+/* --- ANIMATION STYLES for Professional Hero Section --- */
+
+/* Fade in Up Animation Class (to be triggered by JS or AOS) */
+.fade-in-up-on-load {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Fade In Animation Class (for image or other elements) */
+.fade-in-on-load {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+/* This class will be added by JavaScript to trigger the animation */
+.aos-animate {
+    opacity: 1 !important; /* Ensure visibility */
+    transform: translateY(0) !important; /* Reset transform */
+}
+
+/* Image Hover Zoom Effect - no longer applicable to a background image directly */
+
+/* Image Slow Floating Animation - no longer applicable to a background image directly */
+
+/* Note: CSS animations like float or zoom on background images are more complex 
+   and might require pseudo-elements or JS if desired. 
+   For now, these effects are removed as the image is a background. */
+
+/* Navigation Link Underline Animation (example, if nav is part of hero or nearby) */
+.nav-link-animated-underline {
+    position: relative;
+    text-decoration: none;
+    /* color: #004d00; Ensure this matches your nav link color */
+    padding-bottom: 4px; /* Space for the underline */
+}
+
+.nav-link-animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #6B8E23; /* Soft Green */
+    transition: width 0.35s ease-out;
+}
+
+.nav-link-animated-underline:hover::after {
+    width: 100%;
+}
+
+/* Discover More Video Slider Section Styles */
+.discover-more-section {
+    padding: 60px 80px; /* Further increased horizontal padding for more edge space */
+    background-color: #f4f7f6; /* Soft beige, similar to page bg or slightly different */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.discover-title {
+    font-size: 2.8rem; /* Large and bold */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.discover-subheading {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.video-slider-container {
+    position: relative;
+    max-width: 1300px; 
+    margin: 0 auto;
+    /* display: flex; /* Removed as arrows are gone */
+    /* align-items: center; /* Removed as arrows are gone */
+}
+
+.video-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center cards if they don't fill the width */
+    /* overflow-x: hidden; /* Removed */
+    /* padding: 20px 0; /* Removed - rely on section padding */
+    margin: 0; 
+    gap: 25px; 
+    /* transition: transform 0.5s ease-in-out; /* Removed */
+}
+
+.video-cards-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.video-card {
+    flex: 0 0 auto; /* Prevent cards from shrinking/growing */
+    width: 300px; /* Default width, 4 cards would be ~1200px + gaps */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Slight lift and zoom */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.video-card:hover .video-thumbnail {
+    transform: scale(1.1); /* Zoom in thumbnail on card hover */
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 28px; */ /* Removed as SVG has its own size */
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.video-card:hover .play-icon {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(92, 184, 92, 0.5); /* Glowing effect with site's green */
+}
+
+.video-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.video-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); /* Corrected shadow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Standard property for compatibility */ 
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 2.7em; /* approx 2 lines (0.9rem * 1.5 line-height * 2 lines) */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider arrows and indicators CSS (REMOVED) */
+
+/* Responsive Adjustments */
+@media (max-width: 1300px) {
+        /* .prev-arrow, .next-arrow styles REMOVED */
+}
+
+@media (max-width: 1024px) { /* Tablet */
+    .video-card {
+        width: 280px; /* Slightly smaller cards */
+    }
+    .discover-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .discover-more-section {
+        padding: 40px 10px;
+    }
+    .discover-title {
+        font-size: 2.1rem;
+    }
+    .discover-subheading {
+        font-size: 1rem;
+    }
+    .video-card {
+        width: 250px; /* Even smaller for better fit, allows 1-2 cards visible */
+    }
+    .video-cards-wrapper {
+        margin: 0; /* Remove margin if arrows are hidden or smaller */
+        padding-bottom: 15px;
+    }
+        /* .slider-arrow, .prev-arrow, .next-arrow styles REMOVED */
+        /* .slider-indicators styles REMOVED */
+}
+
+@media (max-width: 480px) {
+    .video-card {
+        width: calc(100% - 20px); /* One card takes most of the width */
+        margin: 0 10px; /* Centering if only one card shown at a time effectively */
+    }
+    .video-cards-wrapper{
+        gap: 15px;
+    }
+        /* .slider-arrow styles REMOVED */
+}
+
+/* ========================================= */
+/* == Habitats Around the World Section == */
+/* ========================================= */
+
+.habitats-around-the-world {
+    padding: 80px 20px; /* Generous padding for a spacious feel */
+    background-color: #f4f7f6; /* Soft, slightly cool off-white, sophisticated */
+    /* Consider a subtle gradient or texture if desired:
+    background-image: linear-gradient(to bottom right, #f4f7f6, #e8ecef); */
+    text-align: center;
+    overflow: hidden; /* Prevent horizontal scrollbar on body if container overextends */
+}
+
+.habitats-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px; /* Prominent title */
+    font-weight: 700; /* Bold */
+    color: #2c3e50; /* Deep, sophisticated blue-gray */
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.habitats-subheading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #555; /* Dark gray for readability */
+    max-width: 700px;
+    margin: 0 auto 50px auto; /* Center and provide bottom margin */
+    line-height: 1.6;
+}
+
+.habitats-scroll-container {
+    display: flex;
+    overflow: hidden; /* Hide scrollbar, animation handles movement */
+    padding: 20px 0; /* Padding above/below the scrollable items */
+    /* Scrollbar styling removed as overflow is hidden */
+}
+
+.habitats-wrapper {
+    display: flex; /* Arrange habitat cards in a row */
+    gap: 30px; /* Space between habitat cards */
+    padding: 0 10px; /* Ensures cards don't touch the edge of the scroll container */
+    /* Calculate width for 10 cards (5 original + 5 duplicates) with fixed width and gap */
+    /* Assuming card width of 300px and gap of 30px: (300px * 10) + (30px * 9) = 3000px + 270px = 3270px */
+    /* More accurately for two sets of 5: ( (300px * 5 + 30px * 4) * 2 ) + 30px (gap between the two sets) */ 
+    /* (1500 + 120)*2 + 30 = 1620 * 2 + 30 = 3240 + 30 = 3270px */
+    /* Let's use a simpler calculation for the wrapper: twice the width of 5 cards + 4 gaps, plus one extra gap between the two sets */
+    /* Width of 5 cards + 4 gaps = (300px * 5) + (30px * 4) = 1500px + 120px = 1620px */
+    /* Total width for 10 cards with 9 gaps: (300px * 10) + (30px * 9) = 3000px + 270px = 3270px */
+    width: calc((300px + 30px) * 10 - 30px); /* (Width + Gap) * NumCards - LastGap */
+    animation: scrollHabitats 40s linear infinite; /* Adjust time for speed */
+}
+
+@keyframes scrollHabitats {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Scroll by the width of the first set of 5 cards + 5 gaps */
+        transform: translateX(calc(-1 * ((300px + 30px) * 5)));
+    }
+}
+
+.habitats-scroll-container:hover .habitats-wrapper {
+    animation-play-state: paused;
+}
+.habitat-card {
+    /* background-color: #ffffff; REMOVED - image will be background */
+    border-radius: 15px;
+    padding: 0; /* REMOVED padding */
+    width: 300px; 
+    height: 400px; /* ADDED fixed height */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Adjusted shadow slightly */
+    /* border: 1px solid #e9e9e9; REMOVED or make transparent if overlay needed */
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.habitat-card:hover {
+    transform: translateY(-6px) scale(1.02); 
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22); /* Adjusted shadow slightly */
+    /* border-color: #d0d0d0; REMOVED */
+}
+
+
+/* End Habitats Section Hover Effect */
+
+.habitat-card-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Match card radius */
+    filter: brightness(0.7);
+    transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.habitat-card:hover .habitat-card-background-image {
+    filter: brightness(0.6);
+    transform: scale(1.05);
+}
+
+.habitat-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Position text at the bottom */
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+    z-index: 2;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.habitat-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px; /* Slightly larger */
+    font-weight: 700; /* Bolder */
+    color: #ffffff; /* White text */
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Stronger text shadow for readability */
+}
+
+.habitat-card:hover .habitat-name {
+   color: #f8f8f8; /* Even slightly brighter white on hover */
+   transform: scale(1.05);
+}
+
+/* Styles for animal display panel and list were removed */
+
+/* Optional: Style for animal icons if you use them in the list */
+.animal-list li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .habitats-title {
+        font-size: 30px;
+    }
+    .habitats-subheading {
+        font-size: 16px;
+    }
+    .habitats-wrapper {
+        gap: 20px; /* Reduce gap */
+    }
+    .habitat-card {
+        min-width: 250px; /* Adjust card width for smaller screens */
+        padding: 20px;
+    }
+    .habitat-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .habitat-name {
+        font-size: 20px;
+    }
+}
+
+/* ============================================= */
+/* == Explore by Continent Section NEW Styles == */
+/* ============================================= */
+
+/* General styles for the section (mostly unchanged) */
+.explore-by-continent {
+    background-color: #f4f7f6;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Section Header (unchanged) */
+.continent-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.continent-section-subheading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: #566573;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* New Layout Container */
+.new-continent-layout {
+    display: flex;
+    flex-direction: column; /* Map above cards on mobile */
+    gap: 30px;
+    align-items: center; /* Center map area on mobile */
+}
+
+.new-map-area {
+    width: 100%;
+    max-width: 700px; /* Max width for the map container */
+    min-height: 300px; /* Ensure visibility even if image is small/missing */
+    background-color: #e0e9f0; /* Light blue placeholder background */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-world-map {
+    width: 100%;
+    height: 100%;
+    max-height: 400px; /* Max height for the map image itself */
+    object-fit: contain; /* Ensures entire map is visible */
+    border-radius: 8px;
+}
+
+.new-continent-cards-area {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px;
+}
+
+.new-continent-card {
+    background-color: #ffffff;
+    border: 1px solid #e8e2d9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.new-continent-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.12);
+    border-color: #b08d57; /* Muted gold highlight */
+}
+
+.new-continent-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center; /* Align icon and text content */
+    gap: 15px;
+}
+
+.new-continent-icon {
+    width: 50px; /* Smaller icon */
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    transition: transform 0.3s ease;
+}
+
+.new-continent-card:hover .new-continent-icon {
+    transform: scale(1.1);
+}
+
+.new-continent-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #34495e;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.new-continent-short-preview {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #7f8c8d;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .new-continent-layout {
+        align-items: flex-start; /* Align to start when side-by-side or grid */
+    }
+    .new-map-area {
+        min-height: 350px;
+    }
+    .new-continent-cards-area {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for cards */
+        gap: 25px;
+    }
+    .new-continent-card {
+        padding: 25px;
+    }
+    .new-continent-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .new-continent-name {
+        font-size: 19px;
+    }
+    .new-continent-short-preview {
+        font-size: 14px;
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .new-continent-layout {
+        flex-direction: row; /* Map and cards side-by-side */
+        gap: 40px;
+    }
+    .new-map-area {
+        flex: 0 0 40%; /* Map takes about 40% width */
+        max-width: none; /* Remove mobile max-width */
+        min-height: 450px; /* Taller map area for desktop */
+        height: auto; /* Allow it to grow with content if needed, up to a point */
+        position: sticky; /* Make map sticky if cards scroll */
+        top: 100px; /* Adjust based on navbar height + desired offset */
+        max-height: calc(100vh - 120px); /* Prevent map from being too tall */
+    }
+    .new-world-map {
+        max-height: 100%; /* Map image can fill its container */
+    }
+    .new-continent-cards-area {
+        flex: 1 1 auto; /* Cards take remaining space */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns, usually 1 or 2 */
+        align-content: start; /* Align cards to the top if they don't fill height */
+        /* max-height: calc(100vh - 120px); Optional: if you want cards area to scroll independently */
+        /* overflow-y: auto; */
+    }
+}
+
+/* Adjustments for very large screens if needed */
+@media (min-width: 1440px) {
+    .explore-by-continent {
+        padding: 60px 40px;
+    }
+    .new-map-area {
+        flex-basis: 45%; /* Slightly more space for map on very large screens */
+    }
+    .new-continent-cards-area {
+         /* Could go to 2-3 columns if desired, or keep as is for readability */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Threats to Wildlife Section styles */
+.threats-section {
+    padding: 80px 20px; /* Vertical and horizontal padding */
+    background-image: linear-gradient(to bottom, #e8f5e9, #fdfcfb); /* Soft light green to cream/off-white */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.threats-section-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    padding: 0 15px; /* Padding for smaller screens, ensures grid doesn't touch edges */
+}
+
+.threats-main-title {
+    font-size: 2.8rem; /* Large */
+    font-weight: 700; /* Bold */
+    color: #2e7d32; /* Dark earth green */
+    margin-bottom: 15px;
+}
+
+.threats-subheading {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.threats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 30px; /* Space between cards */
+}
+
+.threat-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px; /* Internal padding */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Initially slightly down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease; /* Added opacity and transform to transition */
+}
+
+.threat-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.threat-card:hover {
+    transform: translateY(-8px); /* Slight lift */
+    box-shadow: 0 12px 24px rgba(46, 125, 50, 0.2); /* Glowing green shadow */
+}
+
+.threat-card svg { /* Style the Feather SVG icons */
+    width: 48px;          /* Desired icon size */
+    height: 48px;
+    color: #2e7d32;       /* Icon color - a nice green to match the theme */
+    margin-bottom: 20px;
+    stroke-width: 1.5;    /* Feather icons look good with a slightly thinner stroke sometimes */
+    transition: transform 0.3s ease-in-out;
+}
+
+.threat-card:hover svg {
+    transform: scale(1.1) translateY(-3px); /* Gentle pulse/float on card hover */
+    color: #388e3c; /* Slightly brighter green on hover */
+}
+
+
+
+.threat-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.threat-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows description to take available space, pushing button down */
+}
+
+.threat-learn-more {
+    display: inline-block;
+    background-color: #388e3c; /* Green button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Pushes button to the bottom of the card */
+    align-self: flex-start; /* Align button to the left */
+}
+
+.threat-learn-more:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 992px) { /* Tablets */
+    .threats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+    .threats-main-title {
+        font-size: 2.4rem;
+    }
+    .threats-subheading {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) { /* Mobile */
+    .threats-grid {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+    .threats-main-title {
+        font-size: 2rem;
+    }
+    .threats-subheading {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+    .threat-card {
+        padding: 20px;
+    }
+    .threat-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Floating Detail Panel Styles */
+.floating-panel {
+    position: absolute; /* Positioned relative to the nearest positioned ancestor or body */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Match .threat-card */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+    width: 280px; /* Or your preferred width */
+    z-index: 1010; /* Make sure it's above other content */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0; /* Hidden by default, controlled by JS */
+    transform: translateY(10px) scale(0.95); /* Initial slight offset for animation */
+    box-sizing: border-box;
+}
+
+.floating-panel.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.close-panel-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-panel-btn:hover {
+    color: #333;
+}
+
+#panelTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+#panelBody {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0; /* No margin if it's the last element before an image */
+}
+
+/* Ensure text content in the panel has some breathing room at the bottom */
+
+/* --- Site Footer --- */
+.site-footer {
+    background-color: #243823;
+    color: #e2e8f0;
+    padding: 4rem 0 2rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer-top-divider {
+    height: 3px;
+    background: linear-gradient(to right, transparent, #a3b899, transparent);
+    margin-bottom: 2rem;
+    opacity: 0.5;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h4, .footer-column a, .footer-bottom p {
+    color: #E0E0E0; /* Footer light text */
+}
+
+.footer-column h4, .footer-column h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-bg, #ffffff);
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+    color: var(--footer-link-color, #cbd5e0); /* Slightly muted link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--secondary-bg, #ffffff);
+    text-decoration: underline;
+}
+
+.footer-contact-info {
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.footer-contact-info a {
+    color: #E0E0E0;
+    text-decoration: none;
+}
+
+.footer-contact-info a:hover {
+    color: #A4EB88;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #243823;
+    width: 100%;
+    margin-top: 2rem;
+    color: #e2e8f0;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 992px) { /* Tablets */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .footer-brand, .footer-social-contact {
+        grid-column: span 1; /* Adjust if needed for better flow */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 30px;
+        text-align: center; /* Center text for stacked columns */
+    }
+
+    .brand-info-wrapper {
+        justify-content: center; /* Center the .footer-address-container block */
+        text-align: center; /* Ensure text within .footer-address-container is centered */
+    }
+
+    .footer-mission, .social-icons, .footer-contact-info {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .social-icons a {
+        margin: 0 10px; /* Adjust spacing for centered icons */
+    }
+}
+.global-wildlife-hero {
+    position: relative;
+    min-height: 50vh;
+    overflow: hidden;
+    padding-top: 0;
+    cursor: none;
+}
+
+/* Fluid cursor effect */
+.global-wildlife-hero {
+    position: relative;
+    min-height: 50vh;
+    overflow: hidden;
+    padding-top: 0;
+    cursor: default;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    .global-wildlife-hero {
+        padding-top: 16rem;
+        padding-bottom: 16rem;
+    }
+}
+
+.hero-headline {
+    color: white !important;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.2),
+        -2px -2px 4px rgba(255, 255, 255, 0.3);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.hero-headline {
+color: white !important;
+text-shadow: 
+2px 2px 4px rgba(0, 0, 0, 0.2),
+-2px -2px 4px rgba(255, 255, 255, 0.3);
+font-size: 3.5rem;
+margin-bottom: 1.5rem;
+line-height: 1.2;
+text-align: center;
+}
+
+.hero-subheading {
+color: white !important;
+text-shadow: 
+2px 2px 4px rgba(0, 0, 0, 0.2),
+-2px -2px 4px rgba(255, 255, 255, 0.3);
+font-size: 1.5rem;
+margin-bottom: 2rem;
+text-align: center;
+max-width: 600px;
+line-height: 1.6;
+}
+
+.hero-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+background-size: cover;
+background-position: center;
+}
+
+.hero-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 2;
+}
+
+.world-map-overlay {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+height: 100%;
+opacity: 0.1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.world-map-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.continent {
+    transition: all 0.3s ease;
+}
+
+.continent:hover {
+    fill: rgba(90, 125, 90, 0.4);
+    stroke-width: 3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-text {
+    text-align: center;
+    color: #2c3e50;
+    max-width: 700px;
+    transition: transform 0.3s ease;
+}
+
+.hero-text:hover {
+    transform: translateY(-5px);
+}
+
+.hero-headline {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #4a5568 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.hero-headline:hover {
+    transform: scale(1.02);
+}
+
+.hero-subheading {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    color: #34495e;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subheading:hover {
+    opacity: 1;
+}
+
+.hero-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    transform: translateY(0);
+}
+
+.hero-cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(76, 175, 80, 0.4);
+}
+
+.hero-cta-button span {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+.hero-cta-button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta-button:hover svg {
+    transform: translateX(5px) rotate(45deg);
+}
+
+.hero-headline {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #2c3e50;
+}
+
+.hero-subheading {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    color: #34495e;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.hero-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+.hero-cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(76, 175, 80, 0.4);
+}
+
+.hero-cta-button span {
+    margin-right: 10px;
+}
+
+.hero-cta-button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+@media (max-width: 768px) {
+    .global-wildlife-hero {
+        height: 70vh;
+    }
+
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-subheading {
+        font-size: 1rem;
+    }
+
+    .hero-cta-button {
+        padding: 12px 25px;
+    }
+}
+
+.popular-by-continents {
+    background-color: #f4f9f4;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.popular-continents-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.popular-continents-subheading {
+    font-family: "Inter", sans-serif;
+    font-size: 1.125rem;
+    color: #34495e;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
+.popular-continents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.continent-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continent-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.continent-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+.continent-card:hover .continent-image {
+    filter: brightness(0.5);
+}
+
+.continent-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+    transition: opacity 0.3s ease;
+}
+
+.continent-card:hover .continent-overlay {
+    opacity: 1;
+}
+
+.continent-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.continent-description {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.continent-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.continent-link:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+.continent-link span {
+    margin-right: 10px;
+}
+
+.continent-link svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+@media (max-width: 1024px) {
+    .popular-continents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .popular-continents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-continents-title {
+        font-size: 2rem;
+    }
+
+    .popular-continents-subheading {
+        font-size: 1rem;
+    }
+}
+
+.continent-card.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.continent-card.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-footer {
+    background-color: #243823; /* Dark green default */
+}

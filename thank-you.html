@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Animal Park</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #228B22;
+            --secondary: #32CD32;
+            --background: #F5FFF5;
+            --gradient-start: #4CAF50;
+            --gradient-end: #2E7D32;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            overflow-x: hidden;
+        }
+
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+            gap: 40px;
+        }
+
+        .checkmark-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkmark {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 50, 100;
+            stroke-dashoffset: 50;
+            animation: drawCheck 1s ease-out forwards;
+        }
+
+        @keyframes drawCheck {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .thank-you-heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        .thank-you-subtext {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--primary);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .back-home-button {
+            padding: 12px 30px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-home-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-home-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Background dots */
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: float 6s linear infinite;
+        }
+
+        /* Celebration Elements */
+        .celebration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 1s ease-in-out infinite;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            opacity: 0;
+            animation: confetti 2s ease-in-out infinite;
+        }
+
+        @keyframes drawCheck {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(360deg);
+            }
+            100% {
+                transform: translateY(0) rotate(720deg);
+            }
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: scale(0) translate(0, 0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) translate(0, -20px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translate(0, -40px);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(0, -200px) rotate(360deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0, -400px) rotate(720deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 20px;
+            }
+
+            .thank-you-heading {
+                font-size: 2rem;
+            }
+
+            .thank-you-subtext {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Celebration Layer -->
+    <div class="celebration" id="celebrationLayer"></div>
+
+    <div class="thank-you-container" data-aos="fade-up">
+        <div class="checkmark-container">
+            <svg class="checkmark" viewBox="0 0 52 52">
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <h1 class="thank-you-heading">Thank You!</h1>
+        <p class="thank-you-subtext">Your feedback fuels our growth.</p>
+        <a href="index.html" class="back-home-button">Back to Home</a>
+    </div>
+
+    <!-- Confetti animation -->
+    <div id="confetti"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Celebration animation
+        function createCelebration() {
+            const celebrationLayer = document.getElementById('celebrationLayer');
+            const colors = ['#4CAF50', '#2E7D32', '#8BC34A', '#388E3C'];
+            
+            // Create sparkles
+            for (let i = 0; i < 30; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                const size = Math.random() * 5 + 5;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+                sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                
+                const duration = Math.random() * 0.5 + 0.5;
+                sparkle.style.animationDuration = duration + 's';
+                
+                celebrationLayer.appendChild(sparkle);
+            }
+
+            // Create confetti
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                confetti.style.left = x + 'px';
+                confetti.style.top = y + 'px';
+                
+                const duration = Math.random() * 1.5 + 1;
+                confetti.style.animationDuration = duration + 's';
+                
+                celebrationLayer.appendChild(confetti);
+            }
+        }
+
+        // Start celebration after the checkmark animation completes (1 second)
+        setTimeout(createCelebration, 1000);
+
+        // Button press effect
+        const button = document.querySelector('.back-home-button');
+        button.addEventListener('click', () => {
+            button.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
