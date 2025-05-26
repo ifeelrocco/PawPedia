@@ -1,0 +1,287 @@
+:root {
+    --primary-bg: #fdfaf6; /* Light Beige */
+    --secondary-bg: #ffffff;
+    --accent-green: #a3b899; /* Soft Forest Green */
+    --accent-brown: #c7b198; /* Soft Brown */
+    --accent-blue: #a8dadc; /* Soft Sky Blue */
+    --text-dark: #4a4a4a; /* Dark Gray */
+    --text-light: #6c757d;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --border-color: #e0e0e0;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    /* Removed padding-top: 70px; */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Mammals Hero Section --- */
+.mammals-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/mammals.jpg') no-repeat center center/cover;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-bg);
+    position: relative;
+}
+
+.mammals-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.mammals-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mammals-hero .cta-button {
+    background-color: var(--accent-green);
+    color: var(--secondary-bg);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mammals-hero .cta-button:hover {
+    background-color: var(--accent-brown);
+    transform: translateY(-3px);
+}
+
+/* --- Filter & Search Section --- */
+.filter-search-section {
+    padding: 3rem 0 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-search-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.search-bar button {
+    padding: 15px 25px;
+    border: none;
+    background-color: var(--accent-green);
+    color: var(--secondary-bg);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--accent-brown);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.filter-btn {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-blue);
+    color: var(--text-dark);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-green);
+    color: var(--secondary-bg);
+    border-color: var(--accent-green);
+}
+
+/* --- Mammal Grid Section --- */
+.mammal-grid-section {
+    padding: 4rem 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.mammal-card {
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.mammal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.mammal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.mammal-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: var(--text-dark);
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--accent-green);
+    color: var(--secondary-bg);
+}
+
+/* Mammal Card Hiding (for filtering) */
+.mammal-card.hide {
+    display: none;
+}
+
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .mammals-hero-content h1 {
+        font-size: 2.5rem;
+    }
+     .mammals-hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Removed body padding-top rule */
+    .mammals-hero {
+        height: 55vh;
+    }
+    .mammals-hero-content h1 {
+        font-size: 2rem;
+    }
+     .mammals-hero-content p {
+        font-size: 1rem;
+    }
+    .filter-search-section .container {
+       flex-direction: column;
+       align-items: stretch;
+    }
+    .search-bar {
+        max-width: none;
+    }
+    .filter-buttons {
+        justify-content: flex-start; /* Align buttons left */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mammals-hero-content h1 {
+        font-size: 1.8rem;
+    }
+     .mammals-hero-content p {
+        font-size: 0.9rem;
+    }
+    .mammals-hero .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+     .search-bar input,
+    .search-bar button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+    .card-content {
+        padding: 1rem;
+    }
+     .card-content h3 {
+        font-size: 1.1rem;
+    }
+}

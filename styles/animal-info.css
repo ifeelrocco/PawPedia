@@ -1,0 +1,225 @@
+:root {
+    --primary-bg: #f8f9fa; /* Light Gray/White */
+    --secondary-bg: #ffffff;
+    --accent-green: #d4e9d6; /* Soft Green */
+    --accent-blue: #cce5ff; /* Soft Blue */
+    --accent-beige: #f5e9d3; /* Soft Beige */
+    --text-dark: #343a40;
+    --text-light: #6c757d;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #dee2e6;
+    --navbar-height: 70px;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-bg);
+    position: relative;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.6);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #f0f0f0; /* Light gray-white */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add subtle shadow for better readability */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    color: #e0e0e0; /* Slightly lighter gray */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9); /* Opaque white with slight transparency */
+    color: #1a1a1a; /* Deep black */
+    padding: 12px 30px;
+    border: 2px solid #1a1a1a;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700; /* Slightly bolder */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px; /* Slight letter spacing for premium feel */
+}
+
+.cta-button:hover {
+    background-color: rgba(240, 240, 240, 0.95); /* Slightly different white on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.25);
+}
+
+/* Category Section */
+.category-section {
+    padding: 4rem 1rem;
+    background-color: var(--primary-bg);
+}
+
+.category-container {
+    max-width: 1100px; /* Adjusted max-width for 3 columns */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    gap: 2rem;
+}
+
+.category-card {
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    /* transition: transform 0.5s ease, box-shadow 0.5s ease; */ /* Removed transition */
+}
+/* Hover effect removed */
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.explore-button {
+    display: inline-block;
+    background-color: var(--accent-green); /* Changed to light green */
+    color: var(--text-dark);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: var(--accent-beige); /* Kept hover as beige */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design for Page Content */
+@media screen and (max-width: 960px) {
+    .category-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* Reduced from 2.5rem */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Reduced from 1rem */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Reduced from 2rem */
+    }
+    
+    .hero p {
+        font-size: 0.8rem; /* Added specific smaller size */
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem; /* Reduced from 1.8rem */
+    }
+
+    .hero p {
+        font-size: 0.8rem; /* Reduced from 0.9rem */
+    }
+
+    .search-container input,
+    .search-container button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}
+

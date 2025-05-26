@@ -1,0 +1,22 @@
+.form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.form-status.error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.form-status.loading {
+    background-color: #f5f5f5;
+    color: #616161;
+}

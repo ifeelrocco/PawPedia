@@ -1,0 +1,293 @@
+/* styles/insects.css - Page-specific styles for Insects */
+
+/* --- Variables (can inherit from style.css or define page-specific ones) --- */
+:root {
+    /* Insect Theme - Pink Focused */
+    --primary-bg: #FDEDFA; /* Very Light Pink for page background */
+    --primary-color: #F9CFF2; /* Light Pink for borders/subtle highlights */
+    --secondary-bg: #ffffff;
+    --accent-pink-hover: #F7B5E8; /* Medium Pink for hover */
+    --accent-pink-active: #E989D5; /* Deeper Pink for active/CTA */
+    --text-dark: #3d405b; /* Dark Blue-Gray */
+    --text-light: #6c757d;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --border-color: #e0e0e0; /* Slightly lighter border for pink theme */
+    --font-primary: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Insects Hero Section --- */
+.insects-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/hero_insects.jpg') no-repeat center center/cover; /* Placeholder Hero */
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-bg);
+    position: relative;
+}
+
+.insects-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.insects-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insects-hero .cta-button {
+    background-color: var(--accent-pink-active); 
+    color: var(--secondary-bg);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.insects-hero .cta-button:hover {
+    background-color: var(--accent-pink-hover); /* Hover color */
+    transform: translateY(-3px);
+}
+
+/* --- Filter & Search Section --- */
+.filter-search-section {
+    padding: 3rem 0 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-search-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.search-bar button {
+    padding: 15px 25px;
+    border: none;
+    background-color: var(--accent-pink-active);
+    color: var(--secondary-bg);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--accent-pink-hover);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.filter-btn {
+    background-color: var(--secondary-bg); /* White background */
+    border: 1px solid var(--primary-color); /* Light pink border */
+    color: var(--text-dark);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-pink-hover);
+    color: var(--secondary-bg);
+    border-color: var(--accent-pink-hover);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-pink-active);
+    color: var(--secondary-bg);
+    border-color: var(--accent-pink-active);
+}
+
+/* --- Insect Grid Section --- */
+.insect-grid-section {
+    padding: 4rem 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.insect-card {
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.insect-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.insect-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.insect-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--secondary-bg);
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--accent-yellow);
+    transform: scale(1.05);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .insects-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .insects-hero {
+        height: 55vh;
+    }
+    .insects-hero-content h1 {
+        font-size: 2rem;
+    }
+    .insects-hero-content p {
+        font-size: 1rem;
+    }
+    .filter-search-section .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-bar {
+        max-width: none;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .filter-buttons {
+        justify-content: center;
+    }
+    .grid-container {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller tablets */
+    }
+    .insect-card {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .insects-hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .insects-hero .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .card-content {
+        padding: 1rem;
+    }
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+    .learn-more-btn {
+        padding: 7px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* --- Hide Class for Filtering --- */
+.insect-card.hide {
+    display: none;
+}
